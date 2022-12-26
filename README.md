@@ -1,7 +1,8 @@
-# bootcamp_projects
+# Bootcamp_projects
+
 Data science bootcamp with adToy
 
-We learn 10 sprints suring 4 months program
+We learn 10 sprints during 4 months program.
 
 -Spreadsheets
 -SQL Database
@@ -12,3 +13,4 @@ We learn 10 sprints suring 4 months program
 -Intro to 'Classical' Machine Learning
 -Intro to Python
 -Essential Python for Data Analyst
+-Dashboard
