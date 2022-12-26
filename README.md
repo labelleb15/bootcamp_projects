@@ -13,5 +13,5 @@ We learn 10 sprints during 4 months program.
 -Intro to 'Classical' Machine Learning
 -Intro to Python
 -Essential Python for Data Analyst
--Dashboar
+-Dashboard
 
