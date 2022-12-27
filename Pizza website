@@ -1,0 +1,112 @@
+#homework
+#ordering pizza
+
+#question 1
+print("Welcome to Bella's Pizza")
+print("Hello There!")
+print("What's your name?")
+name <- readLines("stdin", n=1)
+print(paste("Hi",name))
+
+
+#question 2
+    print("Which pizza would you like to order?")
+    print("1. Pepperoni (29 zl) 2. Hawaiian (35 zl) 3.BBQ bacon (35 zl) 4. Seafood combo (40 zl)")
+while(1){
+    pizza <- c("Pepperoni", " Hawaiian"," BBQ bacon "," Seafood combo ")
+    pizza_id <- as.numeric(readLines(con="stdin", n=1))
+if(pizza_id == "1") {
+  print ("You choose Pepperoni")
+  break
+} else if (pizza_id == "2") {
+  print ("You choose Hawaiian")
+  break
+} else if (pizza_id == "3") {
+  print ("You choose BBQ bacon")
+  break
+} else if (pizza_id == "4") {
+  print ("You choose Seafood combo")
+  break
+}
+}
+  pizza_price <- data.frame(pizza_no = c(1, 2, 3, 4),
+                         pz_tp = c("Pepperoni ", "Hawaiian"," BBQ bacon"," Seafood comb"),
+                        pzp = c(29, 35, 35, 40),
+                        stringsAsFactors = FALSE)
+#question 3
+
+print("Please select pizza size")
+print("1.Small (+0 zl), 2.Medium (+5 zl) , 3,Large (+10 zl")
+size <- c("Small","Medium","Large")
+size_id <- as.numeric(readLines(con="stdin", n=1))
+if (size_id == 1 | size_id == 2 | size_id == 3){
+  print(paste("You choose", size[size_id]))
+  }
+size_price <- data.frame(size_no = c(1, 2, 3),
+                         sizep= c("Small", "Medium", "Large" ),
+                        sp = c(0, 5, 10),
+                        stringsAsFactors = FALSE)
+#question 4
+print ("Please select pizza crust")
+print("1.Pan (+0 zl) , 2.Thin (+0 zl) , 3.Cheese crust (+5 zl) , 4.Sausage crust (+5 zl) ")
+crust <- c("Pan", "Thin", "Cheese crust" , "Sausage crust")
+crust_id <- as.numeric(readLines(con="stdin", n=1))
+if (crust_id == 1 | crust_id == 2 | crust_id == 3 | crust_id == 4){
+  print(paste("You choose", crust[crust_id]))
+  }
+crust_price <- data.frame(crust_no = c(1, 2, 3,4),
+                         crustp = c("Pan", "Thin", "Cheese" , "Sausage" ),
+                        cp = c(0, 0, 5, 5),
+                        stringsAsFactors = FALSE)
+
+  #question 5
+  print ("What would you like to add?")
+  print ("1.Cola (5 zl) 2.Chicken wings (15 zl) 3.Ice creame (10 zl) 0.None")
+while(1){
+add <- c ("Cola", "Chicken wings","Ice creame", "None")
+add_id <- as.numeric(readLines(con="stdin", n=1))
+if(add_id == "1"){
+    print("You add : Cola")
+    break
+  } else if(add_id == "2"){
+    print("You add : Chicken wings")
+    break
+  } else if (add_id == "3"){
+    print ("You add : Ice creame")
+    break
+  } else if (add_id == "0"){
+print ("Nothing more")
+    break}
+}
+
+add_price <- data.frame(add_no = c(1, 2, 3,4),
+                         addp = c("Cola", "Chicken wings", "Ice cream" , "None" ),
+                        ap = c(5, 15, 10, 0),
+                        stringsAsFactors = FALSE)
+#question 6
+print("Your order are : ")
+cat(paste("",pizza[pizza_id],'\n', size[size_id],'\n', crust[crust_id],'\n', add[add_id],'\n'))
+
+#question 7
+print("Which payment method do you like?")
+print("1. Cash 2. Blik 3. Card")
+pay <- c("Cash", "Blik ","Card")
+pay_id <- as.numeric(readLines (con="stdin", n=1))
+if (pay_id == 1 | pay_id == 2 | pay_id == 3)
+
+
+#question 8
+print(paste("Summary Orders: " ,
+            pizza[pizza_id],
+            size[size_id], 
+            crust[crust_id],
+            add[add_id]))
+total <- sum(pizza_price$pzp[pizza_price$pizza_no == pizza_id] 
+        + size_price$sp[size_price$size_no == size_id]     
+        +crust_price$cp[crust_price$crust_no == crust_id]
+        +add_price$ap[add_price$add_no == add_id])
+  print(paste("Total Amounts =",total))
+  print(paste("pay by ",pay[pay_id]))
+  print("Thank you so much for your order!") 
+  
+  
