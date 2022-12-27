@@ -1,0 +1,91 @@
+print("Welcome to rock paper scissors online !!!")
+print("Please enter you name")
+user_name <- readLines("stdin", n=1)
+print( paste("Hi!", user_name , "Let's start!"))
+
+print(" Please type what you choose")
+print("  1 = Rock ")
+print("  2 = Paper ")
+print("  3 = Scissors")
+
+shoot <- list("Rock", "Paper", "Scissors")
+win <- 0
+lose<- 0
+draw <- 0
+round <-1
+
+
+while(round){
+  while(1){
+    print ( paste ("Round = ", round))
+    round <- round + 1
+    print("Your turn! Please select '1', '2', '3'")
+    user <- c("Rock", "Paper"," Sccisors")
+    user_id <- (readLines(con="stdin", n=1))
+if(user_id == "1") {
+  print ("You select Rock")
+  break
+} else if (user_id == "2") {
+  print ("You select Paper")
+  break
+} else if (user_id == "3") {
+  print ("You select Sccisors")
+  break
+}
+}
+
+ bot <- list("Rock", "Paper", "Sccisors")
+    bot_id <- sample(bot, 1)
+    print(paste("Bot select", bot_id))
+    if(shoot[as.numeric(user_id)] == "Rock"){
+        if(bot_id == "Sccisors"){
+            win <- win +1
+            print("Win")
+        } else if(bot_id == "Paper"){
+            lose <- lose + 1
+            print("Lose")
+        } else if(bot_id == "Rock"){
+            draw <- draw + 1
+            print("Draw")
+        }
+        } else if(shoot[as.numeric(user_id)] == "Paper") {
+        if(bot_id == "Rock"){
+            win <- win + 1
+            print("Win")
+        } else if(bot_id == "Scissors"){
+             lose <- lose + 1
+            print("Lose")
+        } else if(bot_id == "Paper"){
+        draw <- draw + 1
+        print("Draw")
+        }            
+    } else if(shoot[as.numeric(user_id)] == "Scissors"){
+        if(bot_id == "Paper"){
+            win <- win + 1
+            print("Win")
+        } else if(bot_id == "Rock"){
+            lose <- lose + 1
+            print("Lose")
+        } else if(bot_id == "Scissors") {
+            draw <- draw + 1
+            print("Draw")
+}
+}
+   print("Continue playing or Quit")
+    print(" '1' Contimue '2' Quit")
+    your_ans <- readLines("stdin", n=1)
+    if(your_ans == "1"){
+        print("Continue playing")
+    } else if(your_ans == "2"){
+        print("Quit")
+      break
+    } 
+}
+
+print(paste("You played ", win+lose+draw, "rounds"))
+print(paste("Total win ", win , "times"))
+print(paste("Total lose ", lose , "times"))
+print(paste("Total draw", draw, "times"))
+
+          
+
